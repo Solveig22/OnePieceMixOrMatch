@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa';
+    background: #FFB300;
+}
+
+.header {
+    display: flex;
+    padding: 15px 250px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-timer {
+    font-size: 1.5rem;
+}
+
+#sound {
+    cursor: pointer;
+}
+
+.red {
+    color: #D50000;
+}
+
+.game {
+    display: grid;
+    height: calc(100vh - 48px);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 15px;
+}
+
+.container {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all .5s ease;
+    border-radius: 5px
+}
+
+.card.active {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: url(../img/backface.jpg) center center / cover no-repeat;
+    border-radius: 5px
+}
+
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    border-radius: 5px
+}
+
+.luffy {
+    background: url(../img/luffy.jpg) center center / cover no-repeat;
+}
+
+.zoro {
+    background: url(../img/zoro.jpg) center center / cover no-repeat;
+}
+
+.nami {
+    background: url(../img/nami.jpg) center center / cover no-repeat;
+}
+
+.usopp {
+    background: url(../img/usopp.jpg) center center / cover no-repeat;
+}
+
+.sanji {
+    background: url(../img/sanji.jpg) center center / cover no-repeat;
+}
+
+.robin {
+    background: url(../img/robin.jpg) center center / cover no-repeat;
+}
+
+.shanks {
+    background: url(../img/shanks.jpg) center center / cover no-repeat;
+}
+
+.chopper {
+    background: url(../img/chopper.jpg) center center / cover no-repeat;
+}
+
+.franky {
+    background: url(../img/franky.jpg) center center / cover no-repeat;
+}
+
+.brook {
+    background: url(../img/brook.jpg) center center / cover no-repeat;
+}
+
+.ace {
+    background: url(../img/ace.jpg) center center / cover no-repeat;
+}
+
+.roger {
+    background: url(../img/roger.png) center center / cover no-repeat;
+}
+
+.winner,
+.loser {
+    display: none;
+}
+
+.winner-container,
+.loser-container {
+    cursor: pointer;
+    background: black;
+    overflow: hidden;
+}
+
+.winner.active {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: yellow;
+    font-weight: 700;
+    animation: 4s winner forwards;
+}
+
+.loser.active {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: yellow;
+    font-weight: 700;
+    animation: 4s winner forwards;
+}
+
+.winner small,
+.loser small {
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+}
+
+#winner-click,
+#winner-timer {
+    color: yellow;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+@keyframes winner {
+    0% {
+        font-size: 1rem;
+        transform: rotate(0deg);
+    }
+    90% {
+        font-size: 6.5rem;
+        transform: rotate(360deg);
+    }
+    100% {
+        font-size: 8.5rem;
+        transform: rotate(0deg);
+    }
+}
