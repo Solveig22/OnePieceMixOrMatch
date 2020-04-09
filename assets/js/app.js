@@ -1,4 +1,7 @@
-window.onload = function() {
+
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+
     let cards = Array.from(document.querySelectorAll('.card'))
     let containers = Array.from(document.querySelectorAll('.container'))
     let winnerDisplay = document.querySelector('.winner')
@@ -229,4 +232,4 @@ window.onload = function() {
         return a;
     }
 
-}
+    })
